@@ -9,8 +9,7 @@
 //----------------------------------------- HOME PAGE -------------------------------------------
 //-----------------------------------------------------------------------------------------------
 .Home{
-
-    &__h1{ margin: 1em 0 1em .6em; text-decoration: underline; }
+    &__h1{ margin: 1em 0 1em .6em; text-decoration: underline }
     &__articlesContainer{ padding: 1em }
     &__createButton{
         width: 800px;
@@ -37,6 +36,9 @@
     }
 }
 
+//-----------------------------------------------------------------------------------------------
+//---------------------------------- ARTICLE CARD -----------------------------------------------
+//-----------------------------------------------------------------------------------------------
 .ArticleCard{
     display: flex;
     max-width: 800px;
@@ -65,72 +67,33 @@
 
 
 
-
 //-----------------------------------------------------------------------------------------------
+//---------------------------------- SQUELETON --------------------------------------------------
 //-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
+.ArticlePreload{ 
+    display: flex;
+    gap: .5em;
+    height: 5em;
+    max-width: 800px;
+    margin-top: 1.5em;
+    animation-name: preload;
+    animation-timing-function: ease-out;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 
-.MoreInfo{
-    width: 100%;
-    padding: 5em 10%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 60% 40%;
-    background-color: rgb(68, 68, 68);
+    &:nth-child(2){ margin-top: 2.5em }
 
-    //------------------------------ TEXT
-    &__textContainer{ width: 90%; padding-top: .5em; }
-    &__title{ color: #FAEDBC; text-decoration: underline }
-    &__text{ margin-bottom: 2em; color: $primary-color-text; font-size: 1.2em }
-    &__button{
-        width: fit-content;
-        font-size: 1.2em;
-        background-color: #FAEDBC;
-        color: #3d3d3d;
-        padding: .5em;
-        box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-        transition: box-shadow linear .2s;
-    }
-    &__button:hover{ box-shadow: 0 0 10px rgba(0,0,0,0.8) }
-    
-    //------------------------------- ASIDE
-    &__aside{ padding-left: .5em; border-left: .1em solid $secundary-color-text }
-    &__articlesTitle{ color: #FAEDBC;  text-decoration: underline;  margin: .5em auto 1em auto }
+    &__image, &__text, &__title{ background-color: #979797cc }
+    &__image{ width: 120px; height: 100% }
+    &__div{ display: flex; flex-direction: column; gap: .5em; justify-content: flex-end; width: 70%; }
+    &__text{ max-width: 80%; height: .8em }
+    &__title{ width: 100%; height: 1.8em }
+}   
+
+@keyframes preload{
+    0%{ opacity: 1; }
+    25%{ opacity: .05 }
+    50%{ opacity: 1 }
+    75%{ opacity: .05 }
+    100%{ opacity: 1 }
 }
-
-//--------------------------------- @MEDIA OF <ABOUTME> AND <MOREINFO>
-@media screen and (max-width:1050px) {
-    .Section{ padding: 5em 5% }
-}
-
-@media screen and (max-width:950px) {
-    .AboutMe__textContainer{ max-width: 350px }
-
-    .MoreInfo{ 
-        width: 100%;
-        padding: 1em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 4em;
-        
-        &__textContainer{ display: flex; flex-direction: column; padding-top: 2em }
-        &__text{ text-align: justify }
-        &__button{ align-self: center }
-    
-        &__aside{ width: 90%; border: none; padding: 0 0 4em 0 }
-        &__title, &__articlesTitle{ text-align: center }
-    }
-    
-}
-
-@media screen and (max-width:700px){
-    .AboutMe{
-        &__container{ flex-direction: column; align-items: center; margin-bottom: 3em; }
-        &__textContainer{ display: flex; flex-direction: column; align-items: center; }
-        &__h3{ text-align: center }
-        &__p{ text-align: justify }
-    }
-}
-
-
