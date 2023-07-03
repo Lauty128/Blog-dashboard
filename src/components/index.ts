@@ -1,2 +1,2 @@
-export * from './ArticlesList';
+export * from './MessageBox';
 export * from './card';

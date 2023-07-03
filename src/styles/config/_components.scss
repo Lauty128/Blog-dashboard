@@ -1,0 +1,31 @@
+.column2span{ grid-column: 2 span; }
+.row2span{ grid-row: 2 span; }
+
+.ComeBack{
+    font-size: 1.2em;
+    color: #FAEDBC;
+    margin-left: 1em;
+
+    & > svg{ vertical-align: text-top; margin-right: 5px; }
+}
+
+.MessageBox{
+    position: fixed;
+    z-index: 100;
+    bottom: 1em;
+    right: 1em;
+    max-width: 18em;
+    padding: .1em .7em;
+    display: flex;
+    align-items: center;
+    gap: .7em;
+    transform: translateX(150%);
+    transition: transform .5s ease-in;
+
+    &--active{ transform: translateX(0) }
+    &--ERROR{ background-color: rgba(175, 91, 91, 0.788) }
+    &--OK{ background-color: rgba(96, 173, 96, 0.726) }
+
+    &__icon{ font-size: 3em; color: #000 }
+    &__message{ font-size: .9em; color: #000 }
+}
