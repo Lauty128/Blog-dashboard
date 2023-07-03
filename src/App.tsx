@@ -1,8 +1,10 @@
 //--------- Dependencies
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//--------- Dependencies
-import { ArticlesList } from './components/ArticlesList';
+//--------- Components
+import { ArticlesList } from './pages/ArticlesList';
+import { CreatePage } from './pages/create/CreatePage';
+import { MessageBox } from './components';
 
 //--------- Styles
 import './styles/index.scss'
@@ -15,9 +17,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<ArticlesList />} />
+        <Route path='/create' element={<CreatePage />} />
         {/* <Route path='/:title' element={<ArticleLayout />} /> */}
       </Routes>
     </BrowserRouter>
+    
+    <MessageBox />
     </>
   )
 }

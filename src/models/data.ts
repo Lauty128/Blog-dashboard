@@ -21,7 +21,7 @@ export interface fullArticleInterface extends articleInterface{
 export interface articleOKResponse{
     status: number;
     data: fullArticleInterface;
-    message: string | undefined
+    message: string | undefined;
 }
 
 //-------------- ARTICLES
